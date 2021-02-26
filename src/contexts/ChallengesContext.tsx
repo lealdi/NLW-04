@@ -53,6 +53,19 @@ export function ChallengesProvider({ children }: ChallengesProviderProps) {
     if (!activeChallenge) {
         return;
     }
+
+    const {amount} = activeChallenge;
+
+    let finalExperience = currentExperience + amount;
+
+    if (finalExperience > experienceToNextLevel) {
+        finalExperience = finalExperience - experienceToNextLevel
+        levelUp();
+    }
+
+    setCurrentExperience(finalExperience)
+    setActiveChallenge(null);
+    setChallengesCompleted(challengesCompleted + 1)
   }
 
     return (
