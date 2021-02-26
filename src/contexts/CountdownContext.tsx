@@ -41,8 +41,8 @@ import {
     function resetCountdown() {
       clearTimeout(countdownTimeout);
       setIsActive(false);
-      setTime(0.1 * 60);
       setHasFinished(false);
+      setTime(0.1 * 60);      
     }
   
     useEffect(() => {
